@@ -1,20 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:busbuddyy/responsive.dart';
 import '../../colors.dart';
-import '../../widgets/primarytext.dart';
-import '../../widgets/secondarytext.dart';
+import '../../widgets/apptext.dart';
 import '../../widgets/yellowbox.dart';
 
-class time extends StatefulWidget {
-  const time({super.key});
+class Time extends StatefulWidget {
+  const Time({super.key});
 
   @override
-  State<time> createState() => _timeState();
+  State<Time> createState() => _TimeState();
 }
 
-class _timeState extends State<time> {
-  bool btn_position=false;
-  String Student_name="Emily!";
+class _TimeState extends State<Time> {
+  bool btn_position = false;
+  String Student_name = "Emily!";
   double getResponsiveValue(BuildContext context, double defaultValue) {
     double screenWidth = MediaQuery.of(context).size.width;
 
@@ -24,10 +23,9 @@ class _timeState extends State<time> {
     } else if (screenWidth >= 600) {
       // Medium screen
       return defaultValue * 2;
-    } else if(screenWidth<300){
+    } else if (screenWidth < 300) {
       return defaultValue * 0.6;
-    }
-    else {
+    } else {
       // Small screen
       return defaultValue;
     }
@@ -38,165 +36,240 @@ class _timeState extends State<time> {
     return Scaffold(
       body: SingleChildScrollView(
         child: Container(
-          margin: EdgeInsets.fromLTRB(15, responsive.marginresponsive(context, 50), 15,0),
+          margin: EdgeInsets.fromLTRB(
+              15, Responsive.marginresponsive(context, 50), 15, 0),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              ptext(text: "Good Morning,"),
-              ptext(text: Student_name,color: appcolors().secondary,),
-              SizedBox(height: 10,),
+              Apptext(
+                text: "Good Morning,",
+                isbig: true,
+              ),
+              Apptext(
+                text: Student_name,
+                color: Appcolors().secondary,
+                isbig: true,
+              ),
+              const SizedBox(
+                height: 10,
+              ),
               Container(
-                padding: EdgeInsets.symmetric(horizontal: 10,vertical: 20),
+                padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 20),
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(15),
                     color: Colors.white,
-                    boxShadow:  [
+                    boxShadow: [
                       BoxShadow(
                           blurRadius: 15,
                           color: Colors.grey.shade200,
-                          spreadRadius: 1
-
-                      )
-                    ]
-                ),
+                          spreadRadius: 1)
+                    ]),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    stext(text: "Your school bus arriving in"),
-                    SizedBox(height: responsive.getResponsiveValue(context,5)),
+                    Apptext(text: "Your school bus arriving in"),
+                    SizedBox(height: Responsive.getResponsiveValue(context, 5)),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        ybox(text: '0',),
-                        SizedBox(width: 4,),
-                        ybox(text: '1',),
-                        SizedBox(width: 3.5,),
-                        ptext(text: ':'),
-                        SizedBox(width: 4,),
-                        ybox(text: '2',),
-                        SizedBox(width: 4,),
-                        ybox(text: '1',),
-                        SizedBox(width: 3.5,),
-                        ptext(text: ':'),
-                        SizedBox(width: 4,),
-                        ybox(text: '4',),
-                        SizedBox(width: 4,),
-                        ybox(text: '5',),
-
+                        const Ybox(
+                          text: '0',
+                        ),
+                        const SizedBox(
+                          width: 4,
+                        ),
+                        const Ybox(
+                          text: '1',
+                        ),
+                        const SizedBox(
+                          width: 3.5,
+                        ),
+                        Apptext(
+                          text: ':',
+                          isbig: true,
+                        ),
+                        const SizedBox(
+                          width: 4,
+                        ),
+                        const Ybox(
+                          text: '2',
+                        ),
+                        const SizedBox(
+                          width: 4,
+                        ),
+                        const Ybox(
+                          text: '1',
+                        ),
+                        const SizedBox(
+                          width: 3.5,
+                        ),
+                        Apptext(
+                          text: ':',
+                          isbig: true,
+                        ),
+                        const SizedBox(
+                          width: 4,
+                        ),
+                        const Ybox(
+                          text: '4',
+                        ),
+                        const SizedBox(
+                          width: 4,
+                        ),
+                        const Ybox(
+                          text: '5',
+                        ),
                       ],
                     ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: [
                         // SizedBox(width: 30,),
-                        stext(text: "Hours"),
+                        Apptext(text: "Hours"),
                         // SizedBox(width: 65,),
-                        stext(text: "Minutes"),
+                        Apptext(text: "Minutes"),
                         // SizedBox(width: 40,),
-                        stext(text: "Seconds"),
+                        Apptext(text: "Seconds"),
                       ],
                     )
                   ],
                 ),
               ),
-              SizedBox(height:20 ,),
-              Center(child: stext(text: "Are you riding the bus this morning?",islight: true,)),
-              SizedBox(height:15 ,),
+              const SizedBox(
+                height: 20,
+              ),
+              Center(
+                  child: Apptext(
+                text: "Are you riding the bus this morning?",
+                islight: true,
+              )),
+              const SizedBox(
+                height: 15,
+              ),
               Container(
-                // padding: EdgeInsets.symmetric(horizontal: 9.w,vertical: 8.h),
+                  // padding: EdgeInsets.symmetric(horizontal: 9.w,vertical: 8.h),
                   decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(responsive.getResponsiveValue(context,22)),
+                      borderRadius: BorderRadius.circular(
+                          Responsive.getResponsiveValue(context, 22)),
                       color: Colors.white,
-                      boxShadow:  [
+                      boxShadow: [
                         BoxShadow(
                             blurRadius: 15,
                             color: Colors.grey.shade200,
-                            spreadRadius: 1
-
-                        )
-                      ]
-                  ),
-
+                            spreadRadius: 1)
+                      ]),
                   child: Stack(
                     children: [
                       Positioned(
-
                         child: AnimatedContainer(
-                          alignment: btn_position? Alignment.centerLeft:Alignment.centerRight ,
-                          margin: EdgeInsets.symmetric(horizontal: responsive.getResponsiveValue(context,9),vertical: responsive.getResponsiveValue(context,8)),
-                          duration: Duration(milliseconds: 300),
-                          child: Expanded(child: ybox(width: getResponsiveValue(context,180),radius: 21,)),
+                          alignment: btn_position
+                              ? Alignment.centerLeft
+                              : Alignment.centerRight,
+                          margin: EdgeInsets.symmetric(
+                              horizontal:
+                                  Responsive.getResponsiveValue(context, 9),
+                              vertical:
+                                  Responsive.getResponsiveValue(context, 8)),
+                          duration: const Duration(milliseconds: 300),
+                          child: Expanded(
+                              child: Ybox(
+                            width: getResponsiveValue(context, 180),
+                            radius: 21,
+                          )),
                         ),
                       ),
                       Positioned(
-
                         child: Padding(
-                          padding: EdgeInsets.all(18),
+                          padding: const EdgeInsets.all(18),
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceAround,
                             children: [
                               TextButton(
-                                onPressed:(){
+                                onPressed: () {
                                   setState(() {
-                                    btn_position=true;
+                                    btn_position = true;
                                   });
                                 },
-                                child:stext(text: "Yes",size: 25,color: appcolors().primary,),),
+                                child: Apptext(
+                                  text: "Yes",
+                                  size: 25,
+                                  color: Appcolors().primary,
+                                ),
+                              ),
                               TextButton(
-                                onPressed:(){
+                                onPressed: () {
                                   setState(() {
-                                    btn_position=false;
+                                    btn_position = false;
                                   });
                                 },
-                                child:stext(text: "No",size: 25,color: appcolors().primary,),),
+                                child: Apptext(
+                                  text: "No",
+                                  size: 25,
+                                  color: Appcolors().primary,
+                                ),
+                              ),
                             ],
                           ),
                         ),
                       )
                     ],
-                  )
-              ),
-              SizedBox(height: 30),
-              Center(child: stext(text: "This response will be updated and locked in",size:15 ,islight: true,)),
-              SizedBox(height:5,),
+                  )),
+              const SizedBox(height: 30),
               Center(
-                child: stext(text: "10 Minutes",size: responsive.getResponsiveValue(context, 42),color:Color(0xFFE70000) ,),
+                  child: Apptext(
+                text: "This response will be updated and locked in",
+                size: 15,
+                islight: true,
+              )),
+              const SizedBox(
+                height: 5,
+              ),
+              Center(
+                child: Apptext(
+                  text: "10 Minutes",
+                  size: Responsive.getResponsiveValue(context, 42),
+                  color: const Color(0xFFE70000),
+                ),
               ),
               Container(
                 alignment: Alignment.topCenter,
                 height: 90,
                 color: Colors.white,
                 child: GestureDetector(
-                    onTap: (){
+                    onTap: () {
                       showModalBottomSheet(
                           context: context,
-                          builder: (BuildContext context){
+                          builder: (BuildContext context) {
                             return Container(
                               height: MediaQuery.of(context).size.height * 0.3,
                               width: MediaQuery.of(context).size.width * 0.8,
-                              padding: EdgeInsets.all(16.0),
+                              padding: const EdgeInsets.all(16.0),
                               child: SingleChildScrollView(
                                 child: Column(
                                   children: [
-                                    stext(text: "Bottom sheet"),
+                                    Apptext(text: "Bottom sheet"),
                                     ElevatedButton(
                                       onPressed: () {
                                         Navigator.pop(context);
                                       },
                                       style: ButtonStyle(
-                                        backgroundColor: MaterialStateProperty.all(appcolors().secondary),
+                                        backgroundColor:
+                                            MaterialStateProperty.all(
+                                                Appcolors().secondary),
                                       ),
-                                      child: stext(text: "close"),
+                                      child: Apptext(text: "close"),
                                     ),
                                   ],
                                 ),
                               ),
                             );
-                          }
-                      );
-
+                          });
                     },
-                    child: Icon(Icons.keyboard_arrow_up_rounded,size: 38,weight: 2,)),
+                    child:const Icon(
+                      Icons.keyboard_arrow_up_rounded,
+                      size: 38,
+                      weight: 2,
+                    )),
               )
             ],
           ),

@@ -1,32 +1,28 @@
-
 import 'package:busbuddyy/Pages/navpages/profile.dart';
 import 'package:busbuddyy/Pages/navpages/time.dart';
 import 'package:flutter/material.dart';
 import '../../colors.dart';
 import 'calendar.dart';
 
-
-class mainnav extends StatefulWidget {
-  const mainnav({super.key});
+class Mainnav extends StatefulWidget {
+  const Mainnav({super.key});
 
   @override
-  State<mainnav> createState() => _mainnavState();
+  State<Mainnav> createState() => _MainnavState();
 }
 
-class _mainnavState extends State<mainnav> {
-  int current=0;
-  void ontap(int index){
+class _MainnavState extends State<Mainnav> {
+  static const List pages = [Time(), Calender(), Profile()];
+  int current = 0;
+  void ontap(int index) {
     setState(() {
-      current=index;
+      current = index;
     });
   }
+
   @override
   Widget build(BuildContext context) {
-    List pages=[
-      time(),
-      calender(),
-      profile()
-    ];
+
     return Scaffold(
       body: pages[current],
       bottomNavigationBar: BottomNavigationBar(
@@ -34,17 +30,20 @@ class _mainnavState extends State<mainnav> {
         selectedItemColor: Colors.black,
         unselectedItemColor: Colors.white,
         type: BottomNavigationBarType.fixed,
-        backgroundColor: appcolors().secondary,
+        backgroundColor: Appcolors().secondary,
         currentIndex: current,
         selectedFontSize: 0,
         unselectedFontSize: 0,
         showSelectedLabels: false,
         showUnselectedLabels: false,
         iconSize: 30,
-        items: [
-          BottomNavigationBarItem(label:"main",icon:Icon(Icons.access_alarm)),
-          BottomNavigationBarItem(label:"calender",icon: Icon(Icons.calendar_today_outlined)),
-          BottomNavigationBarItem(label:"profile",icon: Icon(Icons.account_circle_outlined))
+        items: const [
+          BottomNavigationBarItem(
+              label: "main", icon: Icon(Icons.access_alarm)),
+          BottomNavigationBarItem(
+              label: "calender", icon: Icon(Icons.calendar_today_outlined)),
+          BottomNavigationBarItem(
+              label: "profile", icon: Icon(Icons.account_circle_outlined))
         ],
       ),
     );

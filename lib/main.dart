@@ -6,7 +6,7 @@ void main() {
     debugShowCheckedModeBanner: false,
     initialRoute: '/',
     routes: {
-      '/':(context)=>splashs(),
+      '/': (context) => const Splashs(),
     },
   ));
 }

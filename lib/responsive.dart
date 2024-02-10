@@ -1,8 +1,6 @@
 import 'package:flutter/cupertino.dart';
 
-class responsive{
-
-
+class Responsive {
   static double getResponsiveValue(BuildContext context, double defaultValue) {
     double screenWidth = MediaQuery.of(context).size.width;
 
@@ -12,8 +10,7 @@ class responsive{
     } else if (screenWidth >= 600) {
       // Medium screen
       return defaultValue * 1.2;
-    }
-    else if(screenWidth<300){
+    } else if (screenWidth < 300) {
       return defaultValue * 0.8;
     }
     // else if(screenWidth>=600 && screenHeight<600 ){
@@ -23,16 +20,14 @@ class responsive{
       // Small screen
       return defaultValue;
     }
-
-
   }
-  static double marginresponsive(BuildContext context, double defaultValue){
+
+  static double marginresponsive(BuildContext context, double defaultValue) {
     double screenHeight = MediaQuery.of(context).size.height;
 
-    if(screenHeight<=670 ){
-      return defaultValue *0.4 ;
-    }
-    else{
+    if (screenHeight <= 670) {
+      return defaultValue * 0.4;
+    } else {
       return defaultValue;
     }
   }
