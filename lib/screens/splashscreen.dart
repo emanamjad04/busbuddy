@@ -1,10 +1,11 @@
 import 'dart:ui';
 
+import 'package:busbuddyy/helpers/widgets/loginform.dart';
 import 'package:flutter/material.dart';
-import 'package:busbuddyy/responsive.dart';
-import '../widgets/field.dart';
-import '../widgets/apptext.dart';
-import '../widgets/yellowbox.dart';
+import 'package:busbuddyy/helpers/functions/responsive.dart';
+import 'package:busbuddyy/helpers/widgets/field.dart';
+import 'package:busbuddyy/helpers/widgets/apptext.dart';
+import 'package:busbuddyy/helpers/widgets/yellowbox.dart';
 import 'navpages/mainnav.dart';
 
 class Splashs extends StatefulWidget {
@@ -209,55 +210,7 @@ class _SplashsState extends State<Splashs> with SingleTickerProviderStateMixin {
                     right: Responsive.getResponsiveValue(context, 15),
                     bottom: Responsive.getResponsiveValue(context, 50),
                     // top: responsive.getResponsiveValue(context,50),
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Apptext(
-                          text: "Hey there!",
-                          size: Responsive.getResponsiveValue(context, 48),
-                        ),
-                        SizedBox(
-                          height: Responsive.getResponsiveValue(context, 18),
-                        ),
-                        const Field(hint: 'Username'),
-                        SizedBox(
-                          height: Responsive.getResponsiveValue(context, 18),
-                        ),
-                        const Field(hint: 'Password'),
-                        SizedBox(
-                          height: Responsive.getResponsiveValue(context, 50),
-                        ),
-                        GestureDetector(
-                            onTap: () {
-                              Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (context) => const Mainnav()));
-                            },
-                            child: Ybox(
-                              text: "Get Started",
-                              isblck: true,
-                              width:
-                                  Responsive.getResponsiveValue(context, 380),
-                              textcolor: Colors.white,
-                              textsize:
-                                  Responsive.getResponsiveValue(context, 24),
-                              height:
-                                  Responsive.getResponsiveValue(context, 60),
-                              radius:
-                                  Responsive.getResponsiveValue(context, 100),
-                            )),
-                        SizedBox(
-                          height: Responsive.getResponsiveValue(context, 34),
-                        ),
-                        Center(
-                            child: Apptext(
-                          text: "Forgotten Password?",
-                          size: Responsive.getResponsiveValue(context, 16),
-                        ))
-                      ],
-                    ),
+                    child: LoginForm(),
                   )
                 : Container()
           ],

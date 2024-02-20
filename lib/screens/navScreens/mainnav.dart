@@ -1,7 +1,7 @@
-import 'package:busbuddyy/Pages/navpages/profile.dart';
-import 'package:busbuddyy/Pages/navpages/time.dart';
+import 'package:busbuddyy/screens/navpages/forBoth/profile.dart';
+import 'package:busbuddyy/screens/navpages/student/time.dart';
 import 'package:flutter/material.dart';
-import '../../colors.dart';
+import '../../helpers/extensions/colors.dart';
 import 'calendar.dart';
 
 class Mainnav extends StatefulWidget {

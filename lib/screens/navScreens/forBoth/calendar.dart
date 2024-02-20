@@ -1,10 +1,10 @@
-import 'package:busbuddyy/responsive.dart';
+import 'package:busbuddyy/helpers/functions/responsive.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:table_calendar/table_calendar.dart';
 
-import '../../colors.dart';
-import '../../widgets/apptext.dart';
+import '../../helpers/extensions/colors.dart';
+import 'package:busbuddyy/helpers/widgets/apptext.dart';
 
 class Calender extends StatefulWidget {
   const Calender({super.key});

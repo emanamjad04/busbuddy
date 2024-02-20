@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../../widgets/apptext.dart';
+import 'package:busbuddyy/helpers/widgets/apptext.dart';
 
 class Profile extends StatefulWidget {
   const Profile({super.key});

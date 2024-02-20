@@ -1,7 +1,8 @@
+import 'package:busbuddyy/helpers/widgets/listOfStudents.dart';
 import 'package:flutter/material.dart';
 
-import '../../colors.dart';
-import '../../widgets/apptext.dart';
+import '../../../helpers/extensions/colors.dart';
+import 'package:busbuddyy/helpers/widgets/apptext.dart';
 
 class DriverTime extends StatefulWidget {
   const DriverTime({super.key});
@@ -108,33 +109,7 @@ class _DriverTimeState extends State<DriverTime> {
 
             Positioned(
               bottom: 0,
-              child: Flexible(
-                child: Container(
-                  margin: const EdgeInsets.only(top: 300, left: 10, right: 10),
-                  height: 600,
-                  child: ListView.builder(
-                      itemCount: 10,
-                      padding: EdgeInsets.zero,
-                      itemBuilder: (BuildContext context, index) {
-                        return Card(
-                          margin:const EdgeInsets.all(0.8),
-                          child: ListTile(
-                            onTap: () {},
-                            trailing: Transform.scale(
-                              scale: 2.4,
-                              child: Checkbox(
-                                shape:const CircleBorder(),
-                                value: false,
-                                onChanged: (bool? value) {},),
-                            ),
-                            title: Apptext(text: "Anthony Mark"),
-                            subtitle: Apptext(
-                              text: "8/7, Jackson Apartments 24th lane, South Avenue",islight: true,),
-                          ),
-                        );
-                      }),
-                ),
-              ),
+              child: ListOfStudents(),
             ),
           ],
         ));
