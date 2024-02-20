@@ -1,8 +1,7 @@
-import 'package:busbuddyy/widgets/apptext.dart';
+import 'apptext.dart';
 import 'package:flutter/material.dart';
-import 'package:busbuddyy/responsive.dart';
-import '../colors.dart';
-
+import 'package:busbuddyy/helpers/functions/responsive.dart';
+import 'package:busbuddyy/helpers/extensions/colors.dart';
 class Ybox extends StatefulWidget {
   final double width;
   final double height;

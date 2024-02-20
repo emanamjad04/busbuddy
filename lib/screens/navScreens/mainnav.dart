@@ -1,8 +1,8 @@
-import 'package:busbuddyy/screens/navpages/forBoth/profile.dart';
-import 'package:busbuddyy/screens/navpages/student/time.dart';
+import 'package:busbuddyy/screens/navScreens/forBoth/profile.dart';
+import 'package:busbuddyy/screens/navScreens/student/time.dart';
 import 'package:flutter/material.dart';
 import '../../helpers/extensions/colors.dart';
-import 'calendar.dart';
+import 'forBoth/calendar.dart';
 
 class Mainnav extends StatefulWidget {
   const Mainnav({super.key});

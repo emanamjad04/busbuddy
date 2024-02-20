@@ -3,10 +3,8 @@ import 'dart:ui';
 import 'package:busbuddyy/helpers/widgets/loginform.dart';
 import 'package:flutter/material.dart';
 import 'package:busbuddyy/helpers/functions/responsive.dart';
-import 'package:busbuddyy/helpers/widgets/field.dart';
 import 'package:busbuddyy/helpers/widgets/apptext.dart';
 import 'package:busbuddyy/helpers/widgets/yellowbox.dart';
-import 'navpages/mainnav.dart';
 
 class Splashs extends StatefulWidget {
   const Splashs({super.key});
@@ -16,12 +14,12 @@ class Splashs extends StatefulWidget {
 }
 
 class _SplashsState extends State<Splashs> with SingleTickerProviderStateMixin {
-  late Animation<double> animationtop_or;
-  late Animation<double> animationright_or;
-  late Animation<double> animationtop_pur;
-  late Animation<double> animationleft_pur;
-  late Animation<double> animationtop_pk;
-  late Animation<double> animationleft_pk;
+  late Animation<double> animationTopMediumCircle;
+  late Animation<double> animationRightMediumCircle;
+  late Animation<double> animationTopLargeCircle;
+  late Animation<double> animationLeftLargeCircle;
+  late Animation<double> animationTopSmallCircle;
+  late Animation<double> animationLeftSmallCircle;
   late AnimationController animationController;
   final double height = 60;
   double width = 360;
@@ -36,19 +34,19 @@ class _SplashsState extends State<Splashs> with SingleTickerProviderStateMixin {
     super.initState();
     animationController =
         AnimationController(vsync: this, duration: const Duration(seconds: 3));
-    animationtop_or =
+    animationTopMediumCircle =
         Tween<double>(begin: 30, end: 400).animate(animationController);
-    animationright_or =
+    animationRightMediumCircle =
         Tween<double>(begin: 0, end: 200).animate(animationController);
 
-    animationtop_pur =
+    animationTopLargeCircle =
         Tween<double>(begin: 450, end: 0).animate(animationController);
-    animationleft_pur =
+    animationLeftLargeCircle =
         Tween<double>(begin: 0, end: 120).animate(animationController);
 
-    animationtop_pk =
+    animationTopSmallCircle =
         Tween<double>(begin: 300, end: 10).animate(animationController);
-    animationleft_pk =
+    animationLeftSmallCircle =
         Tween<double>(begin: 0, end: 80).animate(animationController);
 
     animationController.addListener(() {
@@ -75,8 +73,8 @@ class _SplashsState extends State<Splashs> with SingleTickerProviderStateMixin {
           children: [
             //medium circle
             Positioned(
-              top: animationtop_or.value,
-              right: animationright_or.value,
+              top: animationTopMediumCircle.value,
+              right: animationRightMediumCircle.value,
               child: Container(
                 width: 280,
                 height: 280,
@@ -87,8 +85,8 @@ class _SplashsState extends State<Splashs> with SingleTickerProviderStateMixin {
             ),
             //small circle
             Positioned(
-              top: animationtop_pk.value,
-              left: animationleft_pk.value,
+              top: animationTopSmallCircle.value,
+              left: animationLeftSmallCircle.value,
               child: Container(
                 width: 200,
                 height: 200,
@@ -99,8 +97,8 @@ class _SplashsState extends State<Splashs> with SingleTickerProviderStateMixin {
             ),
             //large circle
             Positioned(
-              top: animationtop_pur.value,
-              left: animationleft_pur.value,
+              top: animationTopLargeCircle.value,
+              left: animationLeftLargeCircle.value,
               child: Container(
                 width: 380,
                 height: 380,

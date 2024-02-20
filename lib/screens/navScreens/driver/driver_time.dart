@@ -17,7 +17,7 @@ class _DriverTimeState extends State<DriverTime> {
     return Scaffold(
         body: Stack(
           children: [
-            Positioned(top: 50, left: 10, child: Apptext(text: "Good Morning John!",size: 23,isbig: true)),
+            Positioned(top: 50, left: 10, child: Apptext(text: "Good Morning John!",size: 30,isbig: true)),
             Positioned(
                 top: 100,
                 child: Container(
@@ -97,7 +97,7 @@ class _DriverTimeState extends State<DriverTime> {
                               Apptext(text: "Students",size: 12,),
                               Apptext(text:"today" ,size: 19,),
                               const SizedBox(height: 30,),
-                              Apptext(text: "34",size: 43,color: Colors.white,)
+                              Apptext(text: "34",size: 33,color: Colors.white,)
                             ],
                           ),
                         ),
@@ -108,7 +108,8 @@ class _DriverTimeState extends State<DriverTime> {
             ),
 
             Positioned(
-              bottom: 0,
+              // top: 30,
+              // bottom: 0,
               child: ListOfStudents(),
             ),
           ],

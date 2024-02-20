@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:table_calendar/table_calendar.dart';
 
-import '../../helpers/extensions/colors.dart';
+import '../../../helpers/extensions/colors.dart';
 import 'package:busbuddyy/helpers/widgets/apptext.dart';
 
 class Calender extends StatefulWidget {

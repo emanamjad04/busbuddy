@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../colors.dart';
+import 'package:busbuddyy/helpers/extensions/colors.dart';
 
 class Apptext extends StatelessWidget {
   final String text;

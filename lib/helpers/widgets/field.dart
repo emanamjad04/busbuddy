@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:busbuddyy/responsive.dart';
+import 'package:busbuddyy/helpers/functions/responsive.dart';
 
 class Field extends StatelessWidget {
   final String hint;

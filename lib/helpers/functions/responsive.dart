@@ -1,6 +1,22 @@
 import 'package:flutter/cupertino.dart';
 
 class Responsive {
+  static double getResponsiveValuetimescreen(BuildContext context, double defaultValue) {
+    double screenWidth = MediaQuery.of(context).size.width;
+
+    if (screenWidth >= 1200) {
+      // Large screen
+      return defaultValue * 2.6;
+    } else if (screenWidth >= 600) {
+      // Medium screen
+      return defaultValue * 2;
+    } else if (screenWidth < 300) {
+      return defaultValue * 0.6;
+    } else {
+      // Small screen
+      return defaultValue;
+    }
+  }
   static double getResponsiveValue(BuildContext context, double defaultValue) {
     double screenWidth = MediaQuery.of(context).size.width;
 

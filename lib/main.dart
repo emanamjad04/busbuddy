@@ -1,4 +1,5 @@
-import 'package:busbuddyy/Pages/splashscreen.dart';
+import 'package:busbuddyy/screens/navScreens/driver/driver_time.dart';
+import 'package:busbuddyy/screens/splashscreen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -6,7 +7,7 @@ void main() {
     debugShowCheckedModeBanner: false,
     initialRoute: '/',
     routes: {
-      '/': (context) => const Splashs(),
+      '/': (context) => const DriverTime(),
     },
   ));
 }
